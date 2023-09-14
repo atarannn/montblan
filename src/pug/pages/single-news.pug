@@ -1,0 +1,74 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'single-news'
+    var id_page = 'id-page-single-news'
+    var class_page = 'class-page-single-news'
+    var breadcrumbsSubitem = [
+      {
+        label: 'Mont Blan. Твій світ у центрі міста. Від 850$/м2s',
+        link: pagesLink[0].single-news
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/loader.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/form.js')
+  script(defer src='./assets/scripts/sideform.js')
+
+block content
+  .page__wrapper
+    include ../components/breadcrumbs/breadcrumbs.pug
+    .single-news__wrapper
+      .news-card-info-text 06.04.2023
+      .img
+        img(src="./assets/images/news/1.jpg")
+      .text-wrapper
+        .single-news-title Анонсуємо відкриття відділу продажу нового комплексу назву комплексу!
+        .single-news-text.fist-text Чекаємо на вас 11 та 12 грудня з 11:00 за адресою: Назва вулиці, 6 – вздовж вулиці Ізюмської.
+        ul.text-list
+          .text-list-title.single-news-text З нагоди відкриття вас чекатимуть:
+          li.single-news-text великий вибір планувань;
+          li.single-news-text особливі умови для покупки та розстрочення;
+          li.single-news-text найактуальніша інформація про комплекс та переваги локації;
+          li.single-news-text розіграш техніки від Apple серед перших інвесторів!
+        .single-news-text Mont Blan - сучасний житловий комплекс на Деміївці, який втілюється в концепції "місто в місті" і матиме річку на території. Це спільний проект девелопера ім'я девелопера у партнерстві з девелопер 1 та девелопер 2 – команди практиків, архітекторів, інженерів та новаторів.
+        .single-news-text Точна локація відділу продажу - https://goo.gl/maps/wLzdzrsdaejmP2f3kHW9
+        .single-news-text Чекаємо на вас на відкритті!
+      a(href="#").main-btn
+        span Обрати квартиру
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/b2wLoccnQ1c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    .last-news__wrapper
+      .black-title-96 Останні новини та акції
+      .last-news
+        a(href="single-news.html").news-card.news
+          .img
+            img(src="./assets/images/news/1.jpg")
+          .news-card-info
+            .news-card-info-text Mont Blan. Твій світ у центрі міста. Від 850$/м2
+            .news-card-info-data 06.04.2023
+        a(href="single-news.html").news-card.news
+          .img
+            img(src="./assets/images/news/2.jpg")
+          .news-card-info
+            .news-card-info-text Графік роботи на Великодні свята
+            .news-card-info-data 06.04.2023
+
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

@@ -1,0 +1,340 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'about'
+    var id_page = 'id-page-about'
+    var class_page = 'class-page-about'
+    var breadcrumbsSubitem = [
+      {
+        label: 'Про проєкт',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/loader.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/form.js')
+  script(defer src='./assets/scripts/sideform.js')
+  script(defer src='./assets/scripts/about-slider-1.js')
+  script(defer src='./assets/scripts/about-slider-2.js')
+  script(defer src='./assets/scripts/about-slider-2-mobile.js')
+  script(defer src='./assets/scripts/about-slider-3.js')
+  script(defer src='./assets/scripts/about-slider-4-mobile.js')
+block content
+  .page__wrapper
+    include ../components/breadcrumbs/breadcrumbs.pug
+    .about-section-1
+      .about-section-1-center.brown-text-28 Твій світ у центрі міста
+      .about-section-1-left.brown-text-28 Індивідулальність вибору: ваше комфорте життя, ваш Mont Blan.
+      .about-section-1-right.grey-text-16 Mont Blan  об’єднує людей зі спільними інтересами та високими вимогами до житлового простору, які обирають центр міста для життя, роботи, відпочинку, виховання дітей.  Це саме той будинок, що влучно відображає вишуканий стиль, новаторські смаки та імідж власників квартир.
+    .about-section-2
+      .about-section-2__head
+        .about-section-2__head__title
+          .black-title-96 mont Blan — запорука
+          .brown-title-96 спокою та компорту
+        .about-section-2-swiper-btn
+          .swiper-prev(data-prev-btn-1)
+            +svg('arrow')
+          .about-section-2-swiper__amount
+            .about-section-2-swiper__current
+              span(data-current-num)
+            span.about-section-2-swiper__divider /
+            span.about-section-2-swiper__all(data-total-num)
+          .swiper-next(data-next-btn-1)
+            +svg('arrow')
+      .swiper-container.about-section-2-swiper
+        .swiper-wrapper
+          .swiper-slide
+            .brown-title-96.mobile-title персоналізація
+            .left
+              img(src='./assets/images/about/slider-1/1.jpg' alt='img')
+            .right
+              .brown-title-96 персоналізація
+              .slider-text
+                .black-subtitle-uppercase-48 ВРАЖАЮЧІ КРАЄВИДИ
+                .grey-text-16 З вікон Mont Blan  відкриваються панорами Соборного району: діловий кластер міста, зелений оазис парку та сині простори Дніпра.
+              .slider-text.offset
+                .black-subtitle-uppercase-48 АРХІТЕКТУРА
+                .grey-text-16 Домінантна поверховість, стримані лінії, панорамне скління виступають у тандемі з сучасними технологіями.
+          .swiper-slide
+            .brown-title-96.mobile-title ПРИВАТНІСТЬ
+            .left
+              img(src='./assets/images/about/slider-1/2.jpg' alt='img')
+            .right
+              .brown-title-96 ПРИВАТНІСТЬ
+              .slider-text
+                .black-subtitle-uppercase-48 ВІДКРИТІ ТЕРАСИ
+                .grey-text-16 Власна лаунж-зона на відкритому повітрі стане ідеальним місцем для сніданків і спільних вечерь.
+              .slider-text.offset
+                .black-subtitle-uppercase-48 3-РІВНЕВИЙ ПАРКІНГ
+                .grey-text-16 Вам більше не потрібно витрачати час на пошук вільного паркомісця, а цілодобова охорона та відеонагляд  забезпечать безпеку вашого авто.
+          .swiper-slide
+            .brown-title-96.mobile-title ПРЕСТИЖ
+            .left
+              img(src='./assets/images/about/slider-1/3.jpg' alt='img')
+            .right
+              .brown-title-96 ПРЕСТИЖ
+              .slider-text
+                .black-subtitle-uppercase-48 ЛОБІ
+                .grey-text-16 Багатофункціональні дизайнерські зони площею 300 м2 створять єдиний затишний простір та справлять на своїх гостей особливі враження.
+              .slider-text.offset
+                .black-subtitle-uppercase-48 MONT BLAN CENTER
+                .grey-text-16 Триповерхова будівля в стилі open space - це ділова частина єдиного простору, де сконцентровані всі можливості для життя, роботи і розвитку.
+        .about-section-2-swiper-pagination-mobile
+
+      .about-section-2__tab-mobile
+        .about-section-2__tab-mobile__block
+          .row
+            .brown-title-96 персоналізація
+            .small-btn.js-open-btn
+              +svg('arrow')
+          .col
+            .left
+              img(src='./assets/images/about/slider-1/1.jpg' alt='img')
+            .right
+              .slider-text
+                .black-subtitle-uppercase-48 ВРАЖАЮЧІ КРАЄВИДИ
+                .grey-text-16 З вікон Mont Blan  відкриваються панорами Соборного району: діловий кластер міста, зелений оазис парку та сині простори Дніпра.
+              .slider-text.offset
+                .black-subtitle-uppercase-48 АРХІТЕКТУРА
+                .grey-text-16 Домінантна поверховість, стримані лінії, панорамне скління виступають у тандемі з сучасними технологіями.
+
+
+
+        .about-section-2__tab-mobile__block
+          .row
+            .brown-title-96 ПРИВАТНІСТЬ
+            .small-btn.js-open-btn
+              +svg('arrow')
+          .col
+            .left
+              img(src='./assets/images/about/slider-1/2.jpg' alt='img')
+            .right
+              .slider-text
+                .black-subtitle-uppercase-48 ВІДКРИТІ ТЕРАСИ
+                .grey-text-16 Власна лаунж-зона на відкритому повітрі стане ідеальним місцем для сніданків і спільних вечерь.
+              .slider-text.offset
+                .black-subtitle-uppercase-48 3-РІВНЕВИЙ ПАРКІНГ
+                .grey-text-16 Вам більше не потрібно витрачати час на пошук вільного паркомісця, а цілодобова охорона та відеонагляд  забезпечать безпеку вашого авто.
+
+
+
+        .about-section-2__tab-mobile__block
+          .row
+            .brown-title-96 ПРЕСТИЖ
+            .small-btn.js-open-btn
+              +svg('arrow')
+          .col
+            .left
+              img(src='./assets/images/about/slider-1/3.jpg' alt='img')
+            .right
+              .slider-text
+                .black-subtitle-uppercase-48 ЛОБІ
+                .grey-text-16 Багатофункціональні дизайнерські зони площею 300 м2 створять єдиний затишний простір та справлять на своїх гостей особливі враження.
+              .slider-text.offset
+                .black-subtitle-uppercase-48 MONT BLAN CENTER
+                .grey-text-16 Триповерхова будівля в стилі open space - це ділова частина єдиного простору, де сконцентровані всі можливості для життя, роботи і розвитку.
+
+
+
+    .about-section-3
+      .about-section-3__head
+        .black-title-96 Розпорядок
+        .brown-title-96 насичених
+        .row
+          .black-title-96 буднів
+          .brown-title-96 у Mont
+        .brown-title-96 Blan
+      .about-section-3__head-mobile
+        .row
+          .black-title-96 Розпорядок
+          .brown-title-96 насичених
+        .row
+          .black-title-96 буднів
+          .brown-title-96 у Mont Blan
+      .about-section-3__patern
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0L0 32H32L0 0Z" fill="#282620" fill-opacity="0.1"/>
+        <path d="M31.9721 9.68457L9.67725 32.0001H11.5879L31.9721 11.5981V9.68457Z" fill="#282620"/>
+        <path d="M31.9721 13.5283L13.5176 32.0001H15.4283L31.9721 15.4418V13.5283Z" fill="#282620"/>
+        <path d="M31.9722 17.3721L17.3569 32.0002H19.2687L31.9722 19.2844V17.3721Z" fill="#282620"/>
+        <path d="M31.9722 21.2156L21.1973 32H23.1091L31.9722 23.128V21.2156Z" fill="#282620"/>
+        <path d="M31.9722 25.0593L25.0376 32.0001H26.9494L31.9722 26.9717V25.0593Z" fill="#282620"/>
+        <path d="M31.9722 28.9021L28.8779 32.0002H30.7886L31.9722 30.8156V28.9021Z" fill="#282620"/>
+        </svg>
+      .swiper-pagination.about-section-3-swiper-pagination
+      .about-section-3__swiper-btn
+        .swiper-prev(data-prev-btn-2)
+          +svg('arrow')
+        .swiper-next(data-next-btn-2)
+          +svg('arrow')
+      .swiper-container.about-section-3-swiper
+        .swiper-wrapper
+          .swiper-slide
+            .left
+              .black-subtitle-uppercase-48 07:00
+              .brown-text-28 Ранкова пробіжка у дворі без машин
+            .right
+              img(src='./assets/images/about/slider-2/1.jpg' alt='img')
+          .swiper-slide
+            .left
+              .black-subtitle-uppercase-48 08:00
+              .brown-text-28 Сюди текст. Текст не дуже великий, бо налізе на кнопки. Максимум в 3 рядки.
+            .right
+              img(src='./assets/images/about/slider-2/1.jpg' alt='img')
+          .swiper-slide
+            .left
+              .black-subtitle-uppercase-48 09:00
+              .brown-text-28 Сюди текст. Текст не дуже великий, бо налізе на кнопки. Максимум в 3 рядки.
+            .right
+              img(src='./assets/images/about/slider-2/1.jpg' alt='img')
+          .swiper-slide
+            .left
+              .black-subtitle-uppercase-48 09:30
+              .brown-text-28 Сюди текст. Текст не дуже великий, бо налізе на кнопки. Максимум в 3 рядки.
+            .right
+              img(src='./assets/images/about/slider-2/1.jpg' alt='img')
+          .swiper-slide
+            .left
+              .black-subtitle-uppercase-48 13:00
+              .brown-text-28 Сюди текст. Текст не дуже великий, бо налізе на кнопки. Максимум в 3 рядки.
+            .right
+              img(src='./assets/images/about/slider-2/1.jpg' alt='img')
+          .swiper-slide
+            .left
+              .black-subtitle-uppercase-48 18:00
+              .brown-text-28 Сюди текст. Текст не дуже великий, бо налізе на кнопки. Максимум в 3 рядки.
+            .right
+              img(src='./assets/images/about/slider-2/1.jpg' alt='img')
+          .swiper-slide
+            .left
+              .black-subtitle-uppercase-48 20:00
+              .brown-text-28 Сюди текст. Текст не дуже великий, бо налізе на кнопки. Максимум в 3 рядки.
+            .right
+              img(src='./assets/images/about/slider-2/1.jpg' alt='img')
+          .swiper-slide
+            .left
+              .black-subtitle-uppercase-48 21:00
+              .brown-text-28 Сюди текст. Текст не дуже великий, бо налізе на кнопки. Максимум в 3 рядки.
+            .right
+              img(src='./assets/images/about/slider-2/1.jpg' alt='img')
+
+    .about-section-4
+      .about-section-4-mobile
+        .about-section-4-left__title
+          .brown-title-96 безмежність житла
+          .black-title-96 у власних руках
+        .swiper-container.about-section-4-swiper
+          .swiper-wrapper
+            .swiper-slide
+              .about-section-4-right-block
+                .about-section-4-right__img
+                  img(src='./assets/images/about/slider-3/1.jpg' alt='img')
+                .about-section-4-right__text-wrapper
+                  .brown-title-96 смарт
+                  .grey-text-16 Затишні однокімнатні міні-квартири з повноцінним функціоналом та максимальною ергономікою
+            .swiper-slide
+              .about-section-4-right-block
+                .about-section-4-right__img
+                  img(src='./assets/images/about/slider-3/2.jpg' alt='img')
+                .about-section-4-right__text-wrapper
+                  .brown-title-96 1-кімнатні
+                  .grey-text-16 Просторі однокімнатні квартири з видом на двір, що відкривають широкі можливості для втілення будь-яких найсміливіших ідей в інтер`єрі
+            .swiper-slide
+              .about-section-4-right-block
+                .about-section-4-right__img
+                  img(src='./assets/images/about/slider-3/3.jpg' alt='img')
+                .about-section-4-right__text-wrapper
+                  .brown-title-96 2-кімнатні
+                  .grey-text-16 Повноцінні двокімнатні квартири з неймовірним панорамним видом на Дніпро
+
+          .about-section-4-swiper-pagination-mobile
+        a(href="#").main-btn
+          span придбати квартиру
+      .about-section-4-left
+        .about-section-4-left__title
+          .brown-title-96 безмежність житла
+          .black-title-96 у власних руках
+        .about-section-4-left__text
+          .brown-text-28 Mont Blan включає в себе квартири площею від 34,0 до 64,4м²
+          .grey-text-16 Нерухомість комплексу задовольнить усі потреби та ідеально підійде людям, які проживають одні, вдвох або з сім`єю, та стане чудовою інвестицією.
+        a(href="#").main-btn
+          span обрати квартиру
+      .about-section-4-right
+        .about-section-4-right-block
+          .about-section-4-right__img
+            img(src='./assets/images/about/slider-3/1.jpg' alt='img')
+          .about-section-4-right__text-wrapper
+            .brown-title-96 смарт
+            .grey-text-16 Затишні однокімнатні міні-квартири з повноцінним функціоналом та максимальною ергономікою
+        .about-section-4-right-block
+          .about-section-4-right__img
+            img(src='./assets/images/about/slider-3/2.jpg' alt='img')
+          .about-section-4-right__text-wrapper
+            .brown-title-96 1-кімнатні
+            .grey-text-16 Просторі однокімнатні квартири з видом на двір, що відкривають широкі можливості для втілення будь-яких найсміливіших ідей в інтер`єрі
+        .about-section-4-right-block
+          .about-section-4-right__img
+            img(src='./assets/images/about/slider-3/3.jpg' alt='img')
+          .about-section-4-right__text-wrapper
+            .brown-title-96 2-кімнатні
+            .grey-text-16 Повноцінні двокімнатні квартири з неймовірним панорамним видом на Дніпро
+    .about-section-5
+      .about-section-5-left
+        .about-section-5-left__title
+          .row
+            .brown-title-96 Mont Blan
+            .black-title-96 Shorts
+          //.black-title-96 продажів
+        .about-section-5-left__text
+          <svg width="51" height="42" viewBox="0 0 51 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21.2 20.8V42H0V23L9.6 0.799988H18.6L12.8 20.8H21.2ZM50.4 20.8V42H29.2V23L38.8 0.799988H47.8L42 20.8H50.4Z" fill="#C59781"/>
+          </svg>
+          .brown-text-28 Mont Blan створений бути кращим, даруючи абсолютно новий рівень комфорту для життя та бізнесу.
+        .about-section-5-swiper-btn
+          .swiper-prev(data-prev-btn-3)
+            +svg('arrow')
+          .swiper-next(data-next-btn-3)
+            +svg('arrow')
+      .swiper-container.about-section-5-swiper
+        .swiper-wrapper
+          .swiper-slide
+            <video controls poster="./assets/images/about/slider-4/poster/1.jpg">
+            <source src="./assets/images/about/slider-4/1.mp4" type="video/mp4">
+            </video>
+          .swiper-slide
+            <video controls poster="./assets/images/about/slider-4/poster/2.jpg">
+            <source src="./assets/images/about/slider-4/2.mp4" type="video/mp4">
+            </video>
+          .swiper-slide
+            <video controls poster="./assets/images/about/slider-4/poster/3.jpg">
+            <source src="./assets/images/about/slider-4/3.mp4" type="video/mp4">
+            </video>
+          .swiper-slide
+            <video controls poster="./assets/images/about/slider-4/poster/4.jpg">
+            <source src="./assets/images/about/slider-4/4.mp4" type="video/mp4">
+            </video>
+          .swiper-slide
+            <video controls poster="./assets/images/about/slider-4/poster/5.jpg">
+            <source src="./assets/images/about/slider-4/5.mp4" type="video/mp4">
+            </video>
+        .about-section-5-swiper-pagination-mobile
+
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

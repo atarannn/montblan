@@ -1,0 +1,87 @@
+header.header(data-header-wrapper)
+  .header__top
+    a(href="index.html").header__logo
+      picture
+        source(srcset="./assets/images/logo.svg" media="(min-width: 680px)")
+        img(src="./assets/images/logo-mob.svg")
+    .header__main
+      .mobile-call.js-mobile-call
+        <svg class="tablet" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19.9994 14.9738V17.9846C20.0005 18.2642 19.9431 18.5408 19.831 18.7969C19.7188 19.053 19.5542 19.2829 19.3478 19.4719C19.1415 19.6608 18.8978 19.8047 18.6325 19.8942C18.3672 19.9838 18.0861 20.017 17.8072 19.9919C14.7128 19.6563 11.7404 18.601 9.1289 16.9108C6.69921 15.3699 4.63926 13.3141 3.09534 10.8892C1.39586 8.27099 0.338241 5.29008 0.00816212 2.18795C-0.0169672 1.91042 0.0160811 1.63071 0.105202 1.36663C0.194324 1.10254 0.337566 0.859872 0.525808 0.654066C0.71405 0.448259 0.943169 0.283825 1.19858 0.171234C1.45398 0.058642 1.73008 0.000359723 2.0093 9.73016e-05H5.02608C5.5141 -0.00469635 5.98722 0.167778 6.35725 0.485372C6.72727 0.802966 6.96896 1.24401 7.03727 1.72629C7.1646 2.68982 7.40074 3.63587 7.74118 4.54641C7.87648 4.90563 7.90576 5.29602 7.82556 5.67133C7.74536 6.04665 7.55903 6.39115 7.28867 6.66402L6.01156 7.93859C7.44308 10.4512 9.52758 12.5315 12.0451 13.9602L13.3222 12.6856C13.5956 12.4158 13.9408 12.2298 14.3169 12.1498C14.6929 12.0698 15.0841 12.099 15.444 12.234C16.3564 12.5738 17.3043 12.8095 18.2698 12.9365C18.7582 13.0053 19.2044 13.2509 19.5233 13.6265C19.8422 14.0021 20.0116 14.4817 19.9994 14.9738Z" fill="#C59781"/>
+        </svg>
+        <svg class="mobile" width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.4995 12.9791V15.3877C17.5004 15.6113 17.4545 15.8327 17.3648 16.0375C17.275 16.2424 17.1434 16.4263 16.9783 16.5775C16.8132 16.7286 16.6183 16.8437 16.406 16.9154C16.1938 16.987 15.9689 17.0136 15.7457 16.9935C13.2702 16.725 10.8923 15.8808 8.80312 14.5286C6.85937 13.2959 5.21141 11.6512 3.97627 9.71135C2.61669 7.61679 1.77059 5.23206 1.50653 2.75036C1.48643 2.52834 1.51286 2.30457 1.58416 2.0933C1.65546 1.88203 1.77005 1.6879 1.92065 1.52325C2.07124 1.35861 2.25454 1.22706 2.45886 1.13699C2.66319 1.04691 2.88407 1.00029 3.10744 1.00008H5.52086C5.91128 0.996243 6.28977 1.13422 6.5858 1.3883C6.88182 1.64237 7.07517 1.99521 7.12981 2.38103C7.23168 3.15185 7.42059 3.9087 7.69295 4.63713C7.80118 4.9245 7.82461 5.23682 7.76045 5.53707C7.69629 5.83732 7.54723 6.11292 7.33093 6.33121L6.30925 7.35087C7.45446 9.36092 9.12206 11.0252 11.1361 12.1682L12.1578 11.1485C12.3765 10.9326 12.6527 10.7839 12.9535 10.7198C13.2544 10.6558 13.5673 10.6792 13.8552 10.7872C14.5851 11.059 15.3435 11.2476 16.1158 11.3492C16.5066 11.4042 16.8635 11.6007 17.1186 11.9012C17.3737 12.2017 17.5093 12.5853 17.4995 12.9791Z" stroke="#C59781" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+      .call-form(data-call-form).link-hover
+        span.black-text-uppercase-bold-14 Замовити дзвінок
+      a(href="tel:+380671397988").tell.link-hover
+        span.black-text-uppercase-bold-14 +38 (067) 13-97-988
+      include ../components/lang/lang.pug
+      a(href="#").main-btn
+        span обрати квартиру
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10.6151 8.38462H7.19709M7.19709 8.38462V6.94872M7.19709 8.38462V12.5974C7.19709 12.7631 7.06278 12.8974 6.89709 12.8974H4.58333M7.19709 1H1.55C1.38431 1 1.25 1.13432 1.25 1.3V12.5974C1.25 12.7631 1.38431 12.8974 1.55 12.8974H4.58333M7.19709 1V3.66667M7.19709 1H16.95C17.1157 1 17.25 1.13431 17.25 1.3V8.08462C17.25 8.2503 17.1157 8.38462 16.95 8.38462H15.6415M12.8267 8.38462H15.6415M15.6415 8.38462V16.7C15.6415 16.8657 15.5072 17 15.3415 17H4.88333C4.71765 17 4.58333 16.8657 4.58333 16.7V12.8974" stroke="#C59781" stroke-width="1.5"/>
+        </svg>
+      .menu(data-open-menu)
+        span.black-text-uppercase-bold-14 Mеню
+        .menu__icon
+          span
+          span
+          span
+
+  .header__menu
+    ul.header__menu-list(data-animation)
+      .object-block(data-objects)
+        .object-block__info
+          .object-block__title(data-fx="6")
+            a(href="index.html" data-img="./assets/images/menu/1.jpg").object__title.black-title-96 головна
+              sup.brown-subtitle-uppercase-48 01/
+      .object-block(data-objects)
+        .object-block__info
+          .object-block__title(data-fx="6")
+            a(href="about.html" data-img="./assets/images/menu/2.jpg").object__title.black-title-96 про проєкт
+              sup.brown-subtitle-uppercase-48 02/
+      .object-block(data-objects)
+        .object-block__info
+          .object-block__title(data-fx="6")
+            a(href="3d" data-img="./assets/images/menu/3.jpg").object__title.black-title-96 обрати квартиру
+              sup.brown-subtitle-uppercase-48 03/
+      .object-block(data-objects)
+        .object-block__info
+          .object-block__title(data-fx="6")
+            a(href="flats.html" data-img="./assets/images/menu/4.jpg").object__title.black-title-96 Віртуальний тур
+              sup.brown-subtitle-uppercase-48 04/
+      .object-block(data-objects)
+        .object-block__info
+          .object-block__title(data-fx="6")
+            a(href="construction.html" data-img="./assets/images/menu/5.jpg").object__title.black-title-96 Хід будівництва
+              sup.brown-subtitle-uppercase-48 05/
+      .object-block(data-objects)
+        .object-block__info
+          .object-block__title(data-fx="6")
+            a(href="gallery.html" data-img="./assets/images/menu/1.jpg").object__title.black-title-96 Галерея
+              sup.brown-subtitle-uppercase-48 06/
+      .object-block(data-objects)
+        .object-block__info
+          .object-block__title(data-fx="6")
+            a(href="news.html" data-img="./assets/images/menu/1.jpg").object__title.black-title-96 Новини та акції
+              sup.brown-subtitle-uppercase-48 07/
+      .object-block(data-objects)
+        .object-block__info
+          .object-block__title(data-fx="6")
+            a(href="contacts.html" data-img="./assets/images/menu/1.jpg").object__title.black-title-96 Контакти
+              sup.brown-subtitle-uppercase-48 08/
+
+    .header__menu-bg(data-animation-block)
+      img(src='./assets/images/header-bg.svg' alt='img')
+
+
+
+
+
+
+
+
+
+

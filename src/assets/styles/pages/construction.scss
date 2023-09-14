@@ -1,0 +1,601 @@
+body[id*='construction'],
+body[class*='construction'],
+#construction {
+  .breadcrumbs__wrapper {
+    margin-bottom: var(--offset-40);
+  }
+
+  .head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: var(--offset-20);
+    margin-top: 20px;
+
+    .black-title {
+      line-height: 82%;
+    }
+
+    .col {
+      margin-left: var(--offset-20);
+
+      .brown-subtitle-uppercase-48 {
+        margin-bottom: 8px;
+
+        @include to(680px) {
+          margin-bottom: 4px;
+        }
+      }
+    }
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: auto;
+
+    .grey-text-16:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
+
+  --card-h: 500px;
+
+  @include to(1600px) {
+    --card-h: 440px;
+  }
+}
+
+.construction-progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  &__filter {
+    margin-bottom: var(--block-offset-100);
+    padding: 0 var(--field);
+    width: 100%;
+    //display: flex;
+    //align-items: flex-start;
+    //justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .inner-filter-btn {
+      padding: 0;
+      border: none;
+      background: none;
+      border-bottom: 3px solid transparent;
+      line-height: 110%;
+      margin-right: var(--block-offset-100);
+      white-space: nowrap;
+      width: fit-content;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @include to(1024px) {
+        margin-right: var(--offset-20);
+      }
+
+      &.active {
+        color: $brown;
+        border-bottom: 3px solid $brown;
+        pointer-events: none;
+        transition: border-bottom .2s .5s ease-in-out;
+      }
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--field);
+    width: 100%;
+    padding: 0 var(--field);
+
+    @include to(1024px) {
+      grid-template-columns: 1fr;
+    }
+
+    .construction-progress-card {
+      background: $wc;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      padding: var(--padding-40);
+      height: var(--card-h);
+      cursor: pointer;
+
+      @include to(680px) {
+        flex-direction: column;
+      }
+
+      @include from(1023px) {
+        &:hover {
+          .right {
+            img {
+              transform: scale(1.1) translateZ(0);
+              transition: .5s ease-in-out;
+            }
+          }
+        }
+      }
+
+      &.hide {
+        display: none;
+      }
+
+      .left, .right {
+        width: calc(50% - 12px/2);
+
+        @include to(680px) {
+          width: 100%;
+        }
+      }
+
+      .left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        .text {
+          height: 30%;
+          overflow-y: scroll;
+          padding-right: 10px;
+
+          @include from(1920px) {
+            height: 35%;
+          }
+
+          @include to(1600px) {
+            height: 40%;
+          }
+
+          @include to(1024px) {
+            height: 50%;
+          }
+
+          @include to(680px) {
+            height: 100%;
+          }
+        }
+
+        .section {
+          width: 90%;
+
+          @include to(1024px) {
+            width: auto;
+          }
+        }
+
+        @include to(680px) {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: auto 1fr;
+          grid-template-areas: 'title section'
+          'text text';
+          //row-gap: var(--offset-40);
+          height: 50%;
+
+          .head {
+            margin-top: 5px;
+            margin-bottom: 0;
+            grid-area: title;
+          }
+
+          .text {
+            grid-area: text;
+
+            .grey-text-16 {
+              margin-top: 4px;
+            }
+          }
+
+          .section {
+            grid-area: section;
+            justify-self: flex-end;
+
+            .brown-subtitle-uppercase-48 {
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+
+      .right {
+        height: 100%;
+        overflow: hidden;
+        border-radius: 20px;
+        position: relative;
+        transform: translateZ(0);
+
+        @include to(680px) {
+          margin-top: var(--offset-40);
+          height: 50%;
+        }
+
+        .photo {
+          position: absolute;
+          left: 10px;
+          top: 10px;
+          background: $wc;
+          border-radius: 10px;
+          padding: 6px;
+          z-index: 1;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: .5s ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+
+.construction_progress-popup-wrapper {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+  background: rgba(40, 38, 32, 0.7);
+  z-index: 105;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include to(1024px) {
+    height: 100%;
+    min-height: -webkit-fill-available;
+  }
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .btn-close {
+    height: 96px;
+    width: 96px;
+    background: $brown;
+    border-radius: 20px;
+    border: none;
+    overflow: hidden;
+    position: absolute;
+    right: var(--padding-40);
+    top: var(--padding-40);
+    z-index: 1;
+    pointer-events: all;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include from(1023px) {
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: '';
+        background: $bc;
+        transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+      }
+
+      &:hover{
+        &:before {
+          transform: translate3d(0,-100%,0);
+        }
+
+        svg {
+          //fill: $bc;
+          //transition: .2s ease-in-out;
+        }
+      }
+    }
+
+    @include to(1024px) {
+      background: $bc;
+      height: 48px;
+      width: 48px;
+      border-radius: 9px 0px 9px 9px;
+      right: 0;
+      top: 0;
+
+      &:before {
+        content: none;
+      }
+    }
+
+    @include to(680px) {
+      background: transparent;
+      height: 46px;
+      width: 46px;
+      border-radius: 0;
+      top: calc(var(--padding-40)*2);
+      right: var(--padding-40);
+    }
+
+    svg {
+      fill: $wc;
+      width: 14px;
+      height: auto;
+      position: relative;
+      //transition: .2s ease-in-out;
+
+      @include to(680px) {
+        fill: $bc;
+        height: 10px;
+        width: 10px;
+      }
+    }
+  }
+
+  .construction_progress-popup {
+    height: calc(100% - var(--padding-40)*2);
+    width: calc(100% - var(--padding-40)*2);
+    background: $wc;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: var(--padding-40);
+
+    @include to(1024px) {
+      flex-direction: column;
+      align-items: center;
+      margin-top: var(--padding-40);
+      margin-bottom: var(--padding-40);
+      height: calc(100% - var(--padding-40)*4);
+    }
+
+    @include to(680px) {
+      padding: 40px var(--padding-40) var(--padding-40);
+    }
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin-right: var(--offset-40);
+      width: calc(30% - var(--offset-40)/2);
+      height: 100%;
+
+      @include to(1024px) {
+        width: 100%;
+        height: calc(30% - var(--offset-20));
+        margin-right: 0;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: max-content auto;
+        grid-template-areas: 'title btn'
+        'text text';
+        column-gap: var(--offset-40);
+        row-gap: var(--offset-20);
+        margin-bottom: var(--offset-20);
+      }
+
+      @include to(680px) {
+        height: calc(40% - var(--offset-20));
+      }
+
+      .head {
+        grid-area: title;
+
+        @include to(1024px) {
+          margin-bottom: 0;
+        }
+
+        @include to(680px) {
+          margin-top: 10px;
+        }
+      }
+
+      .text {
+        height: 100%;
+        padding-right: 4px;
+        overflow-y: scroll;
+        grid-area: text;
+      }
+
+      .bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin-top: var(--offset-40);
+        grid-area: btn;
+
+        @include to(1024px) {
+          margin-top: 0;
+        }
+
+        @include to(1024px) {
+          align-items: flex-end;
+        }
+
+        .section {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          background: $light-grey;
+          border-radius: 20px;
+          overflow: hidden;
+          width: 100%;
+          padding: var(--offset-20) calc(var(--offset-20) + 7px);
+          gap: 8px;
+
+          @include to(1024px) {
+            padding: 11px 19px;
+            border-radius: 10px;
+          }
+
+          @include to(680px) {
+            width: auto;
+          }
+
+          .brown-subtitle-uppercase-48 {
+            margin-right: var(--offset-20);
+            white-space: nowrap;
+
+            @include to(680px) {
+              margin-right: 0;
+              white-space: break-spaces;
+            }
+          }
+
+          .construction-swiper-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: auto;
+
+            @include to(680px) {
+              width: 100%;
+              justify-content: space-between;
+            }
+          }
+
+          .main-btn {
+            width: 100%;
+            //display: none;
+
+            svg {
+              position: relative;
+              margin-left: 14px;
+              stroke: $wc;
+              fill: $wc;
+              width: 14px;
+              height: auto;
+              transition: .2s ease-in-out;
+            }
+
+            @include from(1023px) {
+              &:hover{
+                svg {
+                  stroke: $bc;
+                  fill: $bc;
+                  transition: .2s ease-in-out;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .construction-swiper-pagination-mobile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: auto;
+      font-size: var(--font-28);
+      @include font($default-font2, 100%, 400, none, $bc);
+      margin: 0 var(--offset-20);
+
+      .swiper-pagination-current {
+        margin-right: 8px;
+
+        @include to(1024px) {
+          margin-right: 4px;
+        }
+      }
+
+      .swiper-pagination-total {
+        margin-left: 8px;
+
+        @include to(1024px) {
+          margin-left: 4px;
+        }
+      }
+    }
+
+    .right {
+      width: calc(70% - var(--offset-40)/2);
+      height: 100%;
+      background: $light-grey;
+      padding: var(--offset-20);
+      overflow: hidden;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include to(1024px) {
+        width: 100%;
+        height: 70%;
+      }
+
+      @include to(680px) {
+        height: 60%;
+      }
+    }
+
+    .construction-swiper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+
+      .swiper-wrapper {
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          height: 100%;
+          width: auto;
+          object-fit: contain;
+          margin: 0 auto;
+          border-radius: 10px;
+          overflow: hidden;
+
+          @include to(680px) {
+            object-fit: cover;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    video {
+      width: auto;
+      height: 100%;
+      border-radius: 20px;
+
+
+    }
+  }
+}

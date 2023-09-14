@@ -1,0 +1,23 @@
+.lang {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    margin: 0 5px;
+    cursor: default;
+  }
+
+  a, span {
+    font-size: var(--font-14);
+    @include font($default-font3, 140%, 700, uppercase, $bc);
+    text-align: center;
+  }
+
+  .active {
+    a {
+      color: $brown;
+      pointer-events: none;
+    }
+  }
+}

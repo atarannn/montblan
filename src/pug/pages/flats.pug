@@ -1,0 +1,112 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'flats'
+    var id_page = 'id-page-flats'
+    var class_page = 'class-page-flats'
+    var breadcrumbsSubitem = [
+      {
+        label: 'Віртуальний тур',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/loader.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/form.js')
+  script(defer src='./assets/scripts/sideform.js')
+  script(defer src='./assets/scripts/flats.js')
+block content
+  .page__wrapper
+    include ../components/breadcrumbs/breadcrumbs.pug
+    .about-section-2
+      .about-section-2__head
+        .about-section-2__head__title
+          .black-title-96 маленька подорож
+          .brown-title-96 великою мрією
+        .about-section-2-swiper-btn
+          .swiper-prev(data-prev-btn-1)
+            +svg('arrow')
+          .about-section-2-swiper__amount
+            .about-section-2-swiper__current
+              span(data-current-num)
+            span.about-section-2-swiper__divider /
+            span.about-section-2-swiper__all(data-total-num)
+          .swiper-next(data-next-btn-1)
+            +svg('arrow')
+      .swiper-container.about-section-2-swiper
+        .swiper-wrapper
+          .swiper-slide
+            .left(data-panorama-wrapper)
+              iframe(data-panorama src="../../assets/images/flats/1.jpg" preload="none" autoplay="false" muted="" loop="" playsinline="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+              .panorama__faq(data-panorama-faq)
+                img(src="./assets/images/flats/cursor.svg")
+            .right
+              .title-wrapper
+                .brown-title-96 секція а
+                .black-subtitle-uppercase-48 39,2 м2 (1а)
+              .text-wrapper
+                .grey-text-16 Затишна однокімнатна квартира з повноцінним функціоналом та максимальною ергономікою. У плануванні продумано все до дрібниць для вашого комфорту.
+                .grey-text-16 Кухня-вітальня 21.3м², спальня 13м², ванна кімната 4.1м².
+              a(href="#").main-btn
+                span обрати квартиру
+          .swiper-slide
+            .left(data-panorama-wrapper)
+              iframe(data-panorama src="../../assets/images/flats/2.jpg" preload="none" autoplay="false" muted="" loop="" playsinline="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+              .panorama__faq(data-panorama-faq)
+                img(src="./assets/images/flats/cursor.svg")
+            .right
+              .title-wrapper
+                .brown-title-96 секція а
+                .black-subtitle-uppercase-48 45,6 м2 (1д)
+              .text-wrapper
+                .grey-text-16 Простора однокімнатна квартира з видом на місто подарує атмосферні вечірні краєвиди. Незвична форма планування дозволить втілити найсміливіші ідеї.
+                .grey-text-16 Кухня-вітальня 21.4м², спальня 12,2м², гардероб 1.9м², ванна кімната 4.1м².
+              a(href="#").main-btn
+                span обрати квартиру
+          .swiper-slide
+            .left(data-panorama-wrapper)
+              iframe(data-panorama src="../../assets/images/flats/3.jpg" preload="none" autoplay="false" muted="" loop="" playsinline="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+              .panorama__faq(data-panorama-faq)
+                img(src="./assets/images/flats/cursor.svg")
+            .right
+              .title-wrapper
+                .brown-title-96 секція а
+                .black-subtitle-uppercase-48 64,4 м2 (2Б)
+              .text-wrapper
+                .grey-text-16 Повноцінна двокімнатна квартира з неймовірним панорамним видом на річку Дніпро. Досить велика житлова зона дозволить організувати простір за будь-якими потребами.
+                .grey-text-16 Кухня-вітальня 22м², спальня 15.8м², дитяча кімната 15.5м², ванна кімната 4.2м².
+              a(href="#").main-btn
+                span обрати квартиру
+          .swiper-slide
+            .left(data-panorama-wrapper)
+              iframe(data-panorama src="../../assets/images/flats/4.jpg" preload="none" autoplay="false" muted="" loop="" playsinline="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+              .panorama__faq(data-panorama-faq)
+                img(src="./assets/images/flats/cursor.svg")
+            .right
+              .title-wrapper
+                .brown-title-96 секція а
+                .black-subtitle-uppercase-48 75,7 м2 (2Б)
+              .text-wrapper
+                .grey-text-16 На вас чекає ефективно розпланована площа та відкрита тераса, на якій можна насолоджуватись атмосферою мегаполісу. Така квартира — приклад ідеально відтвореної концепції, стилю та практичності.
+                .grey-text-16 Кухня-вітальня 28м², спальня 18.5м², дитяча кімната 14м², ванна кімната 5м², тераса 14м².
+              a(href="#").main-btn
+                span обрати квартиру
+        .about-section-2-swiper-pagination-mobile
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

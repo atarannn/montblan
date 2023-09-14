@@ -1,0 +1,11 @@
+.breadcrumbs__wrapper
+  ul.breadcrumbs
+    li.breadcrumbs-item
+      a(href="index.html") Головна
+    span /
+    if breadcrumbsSubitem
+      each v in breadcrumbsSubitem
+        li.breadcrumbs-item.breadcrumbs-item__current= v.label
+  if breadcrumbsSubitem
+    each v in breadcrumbsSubitem
+      .black-title= v.label

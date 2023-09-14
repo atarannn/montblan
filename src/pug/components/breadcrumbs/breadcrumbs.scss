@@ -1,0 +1,49 @@
+.breadcrumbs__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: var(--block-offset-100);
+  width: 70%;
+
+  @include to(1024px) {
+    width: calc(100% - var(--field)*2);
+  }
+
+  .breadcrumbs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $wc;
+    border-radius: 30px;
+    padding: 8px 16px;
+    width: fit-content;
+    margin-bottom: var(--offset-40);
+    z-index: 1;
+
+    &-item a {
+      font-size: var(--font-12);
+      @include font($default-font2, 140%, 400, normal, $grey);
+      text-align: left;
+    }
+
+    span {
+      margin: 0 10px;
+    }
+
+    &-item__current, span {
+      font-size: var(--font-12);
+      @include font($default-font2, 140%, 400, normal, $bc);
+      text-align: left;
+      cursor: default;
+    }
+
+    &-item__current {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: inline;
+      max-width: 100px;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'contacts'
+    var id_page = 'id-page-contacts'
+    var class_page = 'class-page-contacts'
+    var breadcrumbsSubitem = [
+      {
+        label: 'Контакти',
+        link: pagesLink[0].contacts
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/loader.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/form.js')
+  script(defer src='./assets/scripts/sideform.js')
+
+block content
+  .page__wrapper
+    include ../components/breadcrumbs/breadcrumbs.pug
+    include ../includes/contacts.pug
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug
+  include ../includes/thanks-popup

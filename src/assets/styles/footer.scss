@@ -1,0 +1,21 @@
+.footer {
+  padding: 0 var(--field);
+  margin-top: var(--block-offset-150);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+
+  @include to(680px) {
+    margin-top: var(--offset-40);
+  }
+
+  & .smarto {
+    img {
+      height: 57px;
+      width: 52px;
+      object-fit: contain;
+    }
+  }
+}

@@ -1,0 +1,80 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'construction'
+    var id_page = 'id-page-construction'
+    var class_page = 'class-page-construction'
+    var breadcrumbsSubitem = [
+      {
+        label: 'Хід будівництва',
+        link: pagesLink[0].construction
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/loader.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/form.js')
+  script(defer src='./assets/scripts/sideform.js')
+  script(defer src='./assets/scripts/construction.js')
+
+block content
+  .page__wrapper
+    include ../components/breadcrumbs/breadcrumbs.pug
+    .construction-progress
+      .construction-progress__filter
+        button(data-view="all").black-subtitle-uppercase-48.inner-filter-btn.active.link-hover-3 Всі секції
+        button(data-view="section-A").black-subtitle-uppercase-48.inner-filter-btn.link-hover-3 Секція А
+        button(data-view="section-B").black-subtitle-uppercase-48.inner-filter-btn.link-hover-3 Секція Б
+        button(data-view="section-C").black-subtitle-uppercase-48.inner-filter-btn.link-hover-3 Секція C
+      ul.construction-progress__list
+        li.construction-progress-card(data-open-construction-progress).section-A
+          .left
+            .head
+              .black-title 05/
+              .col
+                .brown-subtitle-uppercase-48 травня
+                .black-subtitle-uppercase-48 2023
+            .text
+              .grey-text-16 Монтуємо опалубку для заливки перекриття між 6 та 7 житловими поверхами.
+              .grey-text-16 Почали монтаж зовнішніх стін на 4 житловому поверсі.
+              .grey-text-16 Квартира 1Г, 38,5м2
+            .section
+              .brown-subtitle-uppercase-48 Секція А
+          .right
+            .photo
+              .grey-text-bold-16 7 фото
+            img(data-img src="./assets/images/construction/1.jpg").img
+        li.construction-progress-card.section-B
+          .left
+            .head
+              .black-title 20/
+              .col
+                .brown-subtitle-uppercase-48 квітня
+                .black-subtitle-uppercase-48 2023
+            .text
+              .grey-text-16 Заливоаємо перекриття 4 житлового поверху.
+            .section
+              .brown-subtitle-uppercase-48 Секція Б
+          .right
+            .photo
+              .grey-text-bold-16 4 фото
+            img(data-img src="./assets/images/construction/2.jpg").img
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug
+  include ../includes/construction-progress-popup

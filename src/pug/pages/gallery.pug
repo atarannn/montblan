@@ -1,0 +1,124 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'gallery'
+    var id_page = 'id-page-gallery'
+    var class_page = 'class-page-gallery'
+    var breadcrumbsSubitem = [
+      {
+        label: 'Галерея',
+        link: pagesLink[0].about
+      }
+    ]
+    var slider = [
+      {img: 'gallery/slider-1/1.jpg'},
+      {img: 'gallery/slider-1/1.jpg'},
+      {img: 'gallery/slider-1/1.jpg'},
+      {img: 'gallery/slider-1/1.jpg'}
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/loader.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/form.js')
+  script(defer src='./assets/scripts/sideform.js')
+  script(defer src='./assets/scripts/gallery-section-1.js')
+  script(defer src='./assets/scripts/about-slider-1.js')
+block content
+  .gallery-section-1
+    .gallery-section-1-btn
+      button(data-view="complex").black-subtitle-uppercase-48 Комплекс
+      button(data-view="entrance").black-subtitle-uppercase-48 Під’їзд
+      button(data-view="park").black-subtitle-uppercase-48 Парк
+      .black-subtitle-uppercase-48.flats-btn Квартири
+        .col
+          button(data-view="flats-first").flats-btn-btn 38,6 м²
+          button(data-view="flats-second").flats-btn-btn 46 м²
+    .gallery-section-1-swiper.swiper-container
+      .swiper-wrapper
+      .gallery-slider__amount
+        .gallery-slider__current(data-current)
+          span(data-first-digit)
+        span.slider__divider /
+        span.slider__all(data-total)
+      .moving-arrow
+        +svg('gallery-arrow')
+      .gallery-section-1-swiper-pagination-mobile
+    .gallery-popup
+      img.gallery-popup-image(src="" alt="Popup Image")
+      button.gallery-popup-close
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.58969 8.00781L0.224976 14.3725L1.63919 15.7867L8.00391 9.42203L14.3686 15.7867L15.7828 14.3725L9.41812 8.00781L15.7813 1.64461L14.3671 0.230394L8.00391 6.5936L1.6407 0.230393L0.226488 1.64461L6.58969 8.00781Z" fill="#282620"/>
+        </svg>
+  .about-section-2
+    .about-section-2__head
+      .about-section-2__head__title
+        .black-title-96 Досконалысть у кожній
+        .row
+          .black-title-96 деталі
+          .brown-title-96 mont blan
+      .about-section-2-swiper-btn
+        .swiper-prev(data-prev-btn-1)
+          +svg('arrow')
+        .about-section-2-swiper__amount
+          .about-section-2-swiper__current
+            span(data-current-num)
+          span.about-section-2-swiper__divider /
+          span.about-section-2-swiper__all(data-total-num)
+        .swiper-next(data-next-btn-1)
+          +svg('arrow')
+    .swiper-container.about-section-2-swiper
+      .swiper-wrapper
+        .swiper-slide
+          .left
+            img(src='./assets/images/gallery/slider-2/1.jpg' alt='img')
+          .right
+            .col
+              .black-title-96 панорамне –
+              .brown-title-96 скління
+            .slider-text
+              .grey-text-16 У кожній боковій квартирі комплексу встановлені панорамні вікна, які візуально розширюють простір та забезпечують приємне природне освітлення. Завдяки правильній технології та якісним матеріалам скляна конструкція характеризується високою механічною міцністю, чудово утримує тепло та захистить вас від будь-якого вуличного шуму.
+        .swiper-slide
+          .left
+            img(src='./assets/images/gallery/slider-2/2.jpg' alt='img')
+          .right
+            .col
+              .black-title-96 вентильований –
+              .brown-title-96 медіа фасад
+            .slider-text
+              .grey-text-16 В Mont Blan вдало реалізована технологія вентильованого фасаду, що за рахунок хорошої теплоізоляції дозволить вам заощаджувати значні кошти на опаленні. Така конструкція вирізняється довгим строком служби та стійкістю до різноманітних атмосферних змін. Медіаскладова фасаду – великий led-екран, транслюючий актуальну зовнішню рекламу, – чудово вписується в загальну картину сучасного комплексу європейського рівня.
+        .swiper-slide
+          .left
+            img(src='./assets/images/gallery/slider-2/3.jpg' alt='img')
+          .right
+            .col
+              .black-title-96 відкриті –
+              .brown-title-96 тераси
+            .slider-text
+              .grey-text-16 Що може бути краще власної відкритої тераси з шикарним видом на місто? Це ідеальна локація для смачного сніданку, затишної вечері у колі близьких або кави на свіжому повітрі після важкого дня. Ви можете декорувати простір за власним смаком. Тераса перетворює вашу оселю в максимально комфортне та атмосферне місце для проживання.
+      .about-section-2-swiper-pagination-mobile
+  .gallery-section-3
+    .black-title-96 вид з вашої квартири
+    .gallery-section-3__video
+      <video controls poster="./assets/images/gallery/section-3/poster/1.jpg">
+      <source src="./assets/images/gallery/section-3/video-1.mov" type="video/mp4">
+      </video>
+      <video controls poster="./assets/images/gallery/section-3/poster/2.jpg">
+      <source src="./assets/images/gallery/section-3/video-2.mov" type="video/mp4">
+      </video>
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

@@ -1,0 +1,93 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'news'
+    var id_page = 'id-page-news'
+    var class_page = 'class-page-news'
+    var breadcrumbsSubitem = [
+      {
+        label: 'Новини та акції',
+        link: pagesLink[0].news
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/loader.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/form.js')
+  script(defer src='./assets/scripts/sideform.js')
+  script(defer src='./assets/scripts/news.js')
+
+block content
+  .page__wrapper
+    include ../components/breadcrumbs/breadcrumbs.pug
+    .news-list
+      a(href="single-news.html").news-card.news
+        .img
+          img(src="./assets/images/news/1.jpg")
+        .news-card-info
+          .news-card-info-text Mont Blan. Твій світ у центрі міста. Від 850$/м2
+          .news-card-info-data 06.04.2023
+      a(href="single-news.html").news-card.news
+        .img
+          img(src="./assets/images/news/2.jpg")
+        .news-card-info
+          .news-card-info-text Графік роботи на Великодні свята
+          .news-card-info-data 06.04.2023
+      a(href="single-news.html").news-card.news
+        .img
+          img(src="./assets/images/news/3.jpg")
+        .news-card-info
+          .news-card-info-text будівницвто відновлено!
+          .news-card-info-data 06.04.2023
+      a(href="single-news.html").news-card.news
+        .img
+          img(src="./assets/images/news/4.jpg")
+        .news-card-info
+          .news-card-info-text Будівництво тимчасово призупинено!
+          .news-card-info-data 06.04.2023
+      a(href="single-news.html").news-card.news
+        .img
+          img(src="./assets/images/news/5.jpg")
+        .news-card-info
+          .news-card-info-text Пропизиція до Дня закоханих!
+          .news-card-info-data 06.04.2023
+      a(href="single-news.html").news-card.news
+        .img
+          img(src="./assets/images/news/6.jpg")
+        .news-card-info
+          .news-card-info-text Графік роботи на Новорічні свята
+          .news-card-info-data 06.04.2023
+      a(href="single-news.html").news-card.news
+        .img
+          img(src="./assets/images/news/7.jpg")
+        .news-card-info
+          .news-card-info-text Старт продажу секції 2
+          .news-card-info-data 06.04.2023
+      a(href="single-news.html").news-card.news
+        .img
+          img(src="./assets/images/news/8.jpg")
+        .news-card-info
+          .news-card-info-text Новорічна безпрограшна лотерея від MontBlan
+          .news-card-info-data 06.04.2023
+
+
+
+
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

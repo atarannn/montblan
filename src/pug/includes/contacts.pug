@@ -1,0 +1,48 @@
+.contacts__info
+  .contacts__info-left
+    .contacts__info-left-col
+      .black-subtitle-uppercase-20 Локація:
+      .grey-text-uppercase-14 вул. 6-ої Стрілецької Дивізії, 29, м. Дніпро
+      a(href="#").main-btn
+        span Відкрити Google Maps
+    .contacts__info-left-col
+      .black-subtitle-uppercase-20 Відділ продажів:
+      a(href="tel:+380671397988").grey-text-uppercase-14.link-hover-2  +38 (067) 13-97-988
+      .timetable
+        .grey-text-uppercase-14 Графік роботи:
+        .grey-text-uppercase-14 Пн-Пт: 10-18
+        .grey-text-uppercase-14 Сб: 10-17, Нд: 10-16
+    .contacts__info-left-col
+      .black-subtitle-uppercase-20 Email:
+      a(href="mailto:info@HonestRicany.com").grey-text-uppercase-14.link-hover-2 info@HonestRicany.com
+    .contacts__info-left-col
+      .black-subtitle-uppercase-20 Social:
+      .social
+        a(href="#").grey-text-uppercase-14.link-hover-2 instagram
+        a(href="#").grey-text-uppercase-14.link-hover-2 Facebook
+        a(href="#").grey-text-uppercase-14.link-hover-2 Youtube
+        a(href="#").grey-text-uppercase-14.link-hover-2 Telegram
+  .contacts__info-right
+    form(data-form-home autocomplete="off").form
+      .form-title.black-subtitle-uppercase-20 Замовити дзвінок
+      .form-text.grey-text-uppercase-14 Залишіть контактні дані і ми обов'язково зв'яжемося з вами
+      .form-field.form-field-input(data-field-input data-field-name data-status="field--inactive").first-offset
+        .input-title Ім’я:
+        input(type='text' name="name" placeholder="Ім’я").form-field__input
+        .input-message(data-input-message)
+      .form-field.disabled.form-field-input(data-field-input data-field-phone data-status="field--inactive")
+        .input-title Телефон:
+        input(type='text' name="phone" placeholder="Телефон").form-field__input
+        .mask-absolute.js-mask-absolute +__ (___) __-__-___
+        .input-message(data-input-message)
+      .form-field.form-field-input(data-field-input data-field-email data-status="field--inactive")
+        .input-title Email:
+        input(type='text' name="email" placeholder="Email").form-field__input
+        .input-message(data-input-message)
+      .form-field.disabled.form-field-input(data-field-input data-field-comment data-status="field--inactive")
+        .input-title Коментар:
+        textarea(type='text' name="comment" placeholder="Коментар").form-field__input.text-input
+        .input-message(data-input-message)
+      button( type="submit" data-btn-submit).submit-btn.link.main-btn
+        span(data-btn-submit-text) Надіслати повідомлення
+

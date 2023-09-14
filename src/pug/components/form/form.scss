@@ -1,0 +1,353 @@
+.form-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: rgba(40, 38, 32, 0.7);
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  z-index: 105;
+
+  .form-close  {
+    position: absolute;
+    right: var(--offset-40);
+    top: var(--offset-40);
+    cursor: pointer;
+    z-index: 107;
+    background: $brown;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 96px;
+    width: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      fill: $wc;
+      position: relative;
+      //transition: .2s ease-in-out;
+
+      @include to(1600px) {
+        height: 20%;
+      }
+    }
+
+    @include from(1023px) {
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: '';
+        background: $bc;
+        transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+      }
+
+      &:hover{
+        &:before {
+          transform: translate3d(0,-100%,0);
+        }
+
+        svg {
+          //fill: $bc;
+          //transition: .2s ease-in-out;
+        }
+      }
+    }
+
+    @include to(1600px) {
+      top: 20px;
+      right: 20px;
+    }
+
+    @include to(1024px) {
+      background: $bc;
+      height: 48px;
+      width: 48px;
+      border-radius: 12px;
+      top: 80px;
+      right: var(--offset-40);
+
+      &:before {
+        content: none;
+      }
+    }
+  }
+
+  .form-inner {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: $wc;
+    position: relative;
+
+    @include to(1024px) {
+      width: 100%;
+    }
+  }
+
+  .form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 var(--offset-40);
+
+    &.not-active {
+      opacity: 0;
+      visibility: hidden;
+      transition: .3s ease-in-out;
+    }
+
+    &-title {
+      margin-bottom: 12px;
+    }
+
+    &-text {
+      margin-bottom: 30px;
+
+      @include to(1600px) {
+        margin-bottom: 20px;
+      }
+    }
+
+    .form-field:not(#t) {
+      margin: 30px 0 0;
+
+      &.first-offset {
+        margin: 0;
+      }
+
+      @include to(1600px) {
+        margin: 20px 0 0;
+      }
+    }
+
+    .submit-btn {
+      margin-top: var(--offset-40);
+
+      @include to(1600px) {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.input-title {
+  font-size: var(--font-14);
+  @include font($default-font3, 140%, 700, uppercase, $bc);
+  text-align: left;
+  margin-bottom: 2px;
+}
+
+.submit-btn, .form-thanks-btn {
+  cursor: pointer;
+  border-left: none;
+  border-right: none;
+}
+
+.form-field:not(#t) {
+  position: relative;
+  background: transparent;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+[data-animation="focus"] .input-message {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 3;
+  display: flex;
+  transform: translate(0%, -50%);
+  user-select: none;
+  pointer-events: none;
+  transition: all 0.16s cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+}
+
+textarea.form-field__input {
+  padding-top: 22px;
+  height: 90px;
+
+  @include to(1600px) {
+    height:70px;
+    padding-top: 16px;
+  }
+}
+
+.form-field__input {
+  text-align: left;
+  height: 60px;
+  width: 100%;
+  background: $light-grey;
+  border-radius: 8px;
+  border: none;
+  padding-left: 24px;
+  cursor: pointer;
+  font-size: var(--font-14);
+  @include font($default-font2, 140%, 400, uppercase, $grey);
+  text-align: left;
+
+  @include to(1600px) {
+    height: 48px;
+  }
+
+  &::placeholder {
+    font-size: var(--font-14);
+    @include font($default-font2, 140%, 400, uppercase, $grey);
+    text-align: left;
+  }
+
+  &:focus + .form-field-message {
+    opacity: 1;
+  }
+}
+
+.mask-absolute {
+  text-align: left;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  height: 60px;
+  width: 100%;
+  padding-left: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  background: $light-grey;
+  border-radius: 8px;
+  font-size: var(--font-14);
+  @include font($default-font2, 140%, 400, uppercase, $grey);
+  text-align: left;
+
+  @include to(1600px) {
+    height: 48px;
+  }
+}
+
+[data-animation="focus"] .form-field__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+[data-animation="none"] .input-message {
+  text-align: left;
+  position: absolute;
+  bottom: -1px;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  text-transform: none;
+  transform: translate(0%, 100%);
+}
+[data-field-input][data-status="field--inactive"]:not(#r) {
+  .input-message {
+    color: $grey;
+  }
+}
+[data-field-input][data-status="field--active"]:not(#r) {
+  .input-message {
+    color: $grey;
+  }
+}
+[data-field-input][data-status="field--error"]:not(#r) {
+  .input-message {
+    color: #EA4041;
+  }
+}
+[data-field-input][data-status="field--success"]:not(#r) {
+  .input-message {
+    color: #96C480;
+  }
+}
+.selected:not(#f) .input-message {
+  top: 0;
+  text-align: left;
+}
+.requaired-block {
+  &-ico {
+    width: 25px;
+    height: 25px;
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+.requaired-block {
+  &__ico {
+    width: 25px;
+    height: 25px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__text {
+    text-align: left;
+    margin: 0px vw(18);
+    white-space: nowrap;
+  }
+}
+.form-field-message {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  text-align: left;
+  transform: translateY(calc(-100% - 10px));
+}
+.requaired-block-ico--position {
+  position: absolute;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.form-thanks-wrapper {
+  opacity: 0;
+  visibility: hidden;
+  height: 100vh;
+  width: 100%;
+  padding: 0 var(--offset-40);
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 106;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  transition: .5s ease-in-out;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transition: .5s ease-in-out;
+  }
+
+  .black-subtitle-uppercase-48 {
+    margin: var(--offset-40) 0 var(--offset-20);
+  }
+}

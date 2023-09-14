@@ -1,0 +1,95 @@
+.page-404 {
+  height: 100vh;
+  width: 100%;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: right;
+  }
+
+  &__info {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: var(--padding-40);
+
+    @include to(680px) {
+      padding: var(--offset-40);
+    }
+
+    &-title {
+      font-size: var(--font-300);
+      @include font($default-font, 100%, 400, uppercase, $wc);
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .black-subtitle-uppercase-48 {
+      color: $wc;
+      text-align: center;
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: var(--offset-20);
+
+      @include to(680px) {
+        flex-direction: column;
+      }
+
+      .go-back {
+        cursor: pointer;
+      }
+
+      .main-btn {
+        min-width: 180px;
+        width: 100%;
+        color: $bc;
+        background: $bc;
+        margin-right: var(--field);
+
+        &:last-child {
+          margin-right: 0;
+
+          @include to(680px) {
+            margin-top: var(--offset-40);
+          }
+        }
+
+        @include from(1023px) {
+          &:before {
+            background: $wc;
+          }
+
+          &:hover{
+            span {
+              color: $wc;
+            }
+          }
+        }
+
+        @include to(1024px) {
+          background: $wc;
+          color: $bc;
+        }
+
+        @include to(680px) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
